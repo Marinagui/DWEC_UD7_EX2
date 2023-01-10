@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+</head>
+<body>
+
+    <script>
+        window.onload = function() {
+            let submit = document.getElementById("submit");
+            
+            submit.onclick = anadirTarea;
+            
+        }
+        
+        function anadirTarea() {
+            let nuevaTarea = document.getElementById("textarea");
+            let lista = document.getElementById("lista");
+            lista.innerHTML += nuevaTarea.value + "<br>";
+            nuevaTarea.value = "";
+        }
+
+    </script>
+
+
+    <textarea id="textarea" name="Nueva tarea" rows="5" cols="50"></textarea>
+    <input id="submit" type="submit" value="Añadir tarea">
+    <div>
+        <h1>Lista de tareas</h1>
+        <p id="lista"></p>
+    </div>
+    
+</body>
+</html>
